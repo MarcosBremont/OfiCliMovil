@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OfiCliMovil.Pantallas.PagosRealizados"
+             Title="Pagos Realizados">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid BackgroundColor="LightGray" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Label  Grid.Column="0" Margin="8" Grid.Row="0" FontAttributes="Bold" Text="Tipo"/>
+                <Label  Grid.Column="1" Margin="8" Grid.Row="0" FontAttributes="Bold" Text="Doc"/>
+                <Label  Grid.Column="2" Margin="8" Grid.Row="0" FontAttributes="Bold" Text="Fecha"/>
+                <Label  Grid.Column="3" Margin="8" Grid.Row="0" FontAttributes="Bold" Text="Concepto"/>
+
+            </Grid>
+
+
+            <ListView x:Name="listx">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20*" />
+                                    <ColumnDefinition Width="30*" />
+                                    <ColumnDefinition Width="30*" />
+                                    <ColumnDefinition Width="30*" />
+                                </Grid.ColumnDefinitions>
+
+
+
+                                <Label  Grid.Column="0" Text="{Binding Tipo}"/>
+                                <Label  Grid.Column="1" Text="{Binding Doc}"/>
+                                <Label  Grid.Column="2" Text="{Binding Fecha}"/>
+                                <Label  Grid.Column="3" Text="{Binding Concepto}"/>
+
+
+                            </Grid>
+
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+            <StackLayout Padding="20">
+                
+                <StackLayout Orientation="Horizontal"  Padding="10,10,10,0">
+                    <Label VerticalOptions="Center">Pagos Realizados</Label>
+                    <Image WidthRequest="15" Source="numeral.png"></Image>
+                    <Entry Grid.Column="0" FontSize="12" Text="4" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"  Padding="10,10,10,0">
+                    <Label VerticalOptions="Center">Total Pagado</Label>
+                    <Image WidthRequest="15" Source="dollar.png"></Image>
+                    <Entry Grid.Column="0" FontSize="12" Text="3104.00" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OfiCliMovil.Pantallas.MisMetodosDePago"
+             Title="Mis Metodos de Pago">
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+
+            <ListView x:Name="listViewEjemplo1" CachingStrategy="RecycleElement" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="40" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <CheckBox Grid.Column="0" IsChecked="false" />
+                                <Image Grid.Column="1" HorizontalOptions="Start" Source="{Binding icon}" Margin="5"></Image>
+                                <Label x:Name="idLabel" Grid.Column="2" Text="{Binding Opcion}" VerticalTextAlignment="Center" Margin="5"/>
+                                <Image Grid.Column="2" HeightRequest="20" HorizontalOptions="EndAndExpand" Source="{Binding IconoBasura}" Margin="5"></Image>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label x:Name="idLabel" HorizontalOptions="CenterAndExpand" Text="Añadir Método de Pago" Margin="5"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

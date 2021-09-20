@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OfiCliMovil.Pantallas.RealizarPago"
+             Title="Realizar Pago">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" >
+            <StackLayout Padding="20">
+
+                <StackLayout  VerticalOptions="StartAndExpand" Padding="10,10,10,0">
+                    <Label Grid.Column="0" FontSize="14" FontAttributes="Bold" TextColor="Black" Text="Balance:" HorizontalOptions="Start" VerticalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"  Padding="10,10,10,0">
+                    <Image WidthRequest="15" Source="dollar.png"></Image>
+                    <Entry Grid.Column="0" FontSize="12" Text="2222222" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout VerticalOptions="StartAndExpand" Padding="10,10,10,0">
+                    <Label Grid.Column="0" FontSize="14" FontAttributes="Bold" TextColor="Black" Text="Pago Mínimo" HorizontalOptions="Start" VerticalOptions="Center" />
+                </StackLayout>
+
+
+
+                <StackLayout Orientation="Horizontal"  Padding="10,10,10,0">
+                    <Image WidthRequest="15" Source="dollar.png"></Image>
+                    <Entry Grid.Column="0" FontSize="12" Text="2222222" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+
+                <StackLayout  VerticalOptions="StartAndExpand" Padding="10,10,10,0">
+                    <Label Grid.Column="0" FontSize="14" FontAttributes="Bold" TextColor="Black" Text="Valor a Pagar" HorizontalOptions="Start" VerticalOptions="Center" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"  Padding="10,10,10,0">
+                    <Label VerticalOptions="Center" FontSize="16" TextColor="Black" FontAttributes="Bold">RD</Label>
+                    <Image WidthRequest="15" Source="dollar.png"></Image>
+                    <Entry Grid.Column="0" FontSize="12" Text="" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+
+
+
+                <StackLayout Padding="0,25,0,0">
+
+                    <Button CornerRadius="10" Text="TARJETA DE CREDITO/DEBITO"></Button>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" HeightRequest="30">
+                        <Image WidthRequest="50" Source="logovisa.png"></Image>
+                        <Image WidthRequest="50" Source="logoamericanexpress.png"></Image>
+                        <Image WidthRequest="50" Source="logomastercard.png"></Image>
+                        <Image WidthRequest="50" Source="logodiscover.png"></Image>
+                    </StackLayout>
+
+                    <StackLayout Padding="0,25,0,0">
+                        <ImageButton WidthRequest="60" HeightRequest="60" CornerRadius="50" BackgroundColor="Gold" Source="paypal1"></ImageButton>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="CenterAndExpand">
+
+                        <Label>Terminos y condiciones</Label>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <!--<StackLayout WidthRequest="100" BackgroundColor="Gray" Orientation="Horizontal" Padding="5">
+                    <Image HorizontalOptions="StartAndExpand" WidthRequest="80" Source="OFICABLELOGO"></Image>
+                    <Image HorizontalOptions="StartAndExpand" WidthRequest="80" Source="Sistecsoft"></Image>
+                    <Image HorizontalOptions="StartAndExpand" WidthRequest="80" Source="Sistecsoft"></Image>
+                </StackLayout>
+                <Label>Jarabacoa</Label>-->
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

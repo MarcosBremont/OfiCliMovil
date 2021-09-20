@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OfiCliMovil.Pantallas.LoginPage">
+
+    <StackLayout BackgroundColor="White" x:Name="StackDelColorLogin">
+
+        <StackLayout Margin="15">
+
+            <ImageButton Source="setting1" x:Name="AjusteAdministracion" Clicked="AjusteAdministracion_Clicked" WidthRequest="35" BackgroundColor="Transparent"  HorizontalOptions="EndAndExpand"></ImageButton>
+            <Image Source="OfiCliLogoNaranjaYAzulMovil.png" HeightRequest="80" Margin="0,30,0,0"/>
+
+            <StackLayout Margin="0,10,0,0" >
+                <Entry Placeholder="Usuario"  x:Name="TxtUsuario" Margin="0,0,0,0" />
+                <Entry Placeholder="Contraseña"  x:Name="TxtClave"  Margin="0,0,0,0" IsPassword="True" />
+                <Button x:Name="BtnIniciarSesion" Clicked="BtnIniciarSesion_Clicked"  Margin="0,15,0,0" CornerRadius="20" BackgroundColor="#2196F3" TextColor="White" Text="Iniciar Sesión" ></Button>
+
+
+                <Label Margin="10" x:Name="lblolvidastelacontraseña" HorizontalOptions="EndAndExpand" FontAttributes="Bold" FontSize="16" TextColor="#2196F3"  Text="¿Olvidaste tu contraseña?"></Label>
+                <Grid >
+                    <Button Image="Sistecsoft.png"  x:Name="btnSistecsoft"  HorizontalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="0" BorderColor="Transparent" BackgroundColor="Transparent" Scale="0.2"/>
+                    <Button Image="OFICABLELOGO.png" x:Name="btnOficable" HorizontalOptions="CenterAndExpand" Grid.Column="1" Grid.Row="0" BorderColor="Transparent" BackgroundColor="Transparent" Scale="0.2"/>
+                </Grid>
+
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+            <Label HorizontalOptions="CenterAndExpand"  Margin="0,0,0,10" Text="Created by Sistecsoft Beta v1.0.0"></Label>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

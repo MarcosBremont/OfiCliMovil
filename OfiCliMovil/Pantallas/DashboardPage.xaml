@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OfiCliMovil.Pantallas.DashboardPage"
+             Title="Dashboard" BackgroundColor="#1976D2">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="White">
+
+                <StackLayout  Margin="30">
+                   
+                    <Button 
+                        Grid.Row="0"
+                        x:Name="btnPendiente"
+                        Text="PENDIENTE"
+                        
+                        TextColor="White"
+                        ImageSource="user32.png"
+                        ContentLayout="top"
+                        BackgroundColor="#FC5340"
+                        Clicked="btnPendiente_Clicked"
+                        CornerRadius="8">
+                    </Button>
+
+                    <Button 
+                        Grid.Row="1"
+                        x:Name="btnPagoMinimo"
+                        Text="PAGO MINIMO"
+                        TextColor="White"
+                        ContentLayout="top"
+                        ImageSource="dollartag32.png"
+                        BackgroundColor="#15B5E9"
+                        CornerRadius="8">
+                    </Button>
+
+                    <Button 
+                        Grid.Row="2"
+                        x:Name="btnFinServicio"
+                        Text="FIN DE SERVICIO"
+                        TextColor="White"
+                        ContentLayout="top"
+                        ImageSource="sandclock32white.png"
+                        BackgroundColor="#5CCB00"
+                        CornerRadius="8">
+                    </Button>
+
+                    <Button 
+                        Grid.Row="3"
+                        x:Name="btnEstado"
+                        Text="ESTADO"
+                        TextColor="White"
+                        HeightRequest="80"
+                        ContentLayout="top"
+                        ImageSource="estetoscopio32.png"
+                        BackgroundColor="#DCB201"
+                        CornerRadius="8">
+                    </Button>
+
+                    <Button 
+                        Grid.Row="2"
+                        x:Name="btnCuotaMensual"
+                        Text="CUOTA MENSUAL"
+                        TextColor="White"
+                        ContentLayout="top"
+                        ImageSource="c32.png"
+                        HeightRequest="80"
+                        BackgroundColor="#00697C"
+                        CornerRadius="8">
+                    </Button>
+
+                    <Button 
+                        Grid.Row="3"
+                        x:Name="btnUltimoPago"
+                        Text="ULTIMO PAGO"
+                        TextColor="White"
+                        ContentLayout="top"
+                        ImageSource="tarjetadecredito32.png"
+                        HeightRequest="80"
+                        BackgroundColor="#EE8D00"
+                        CornerRadius="8">
+                    </Button>
+
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0">
+                        <Image Source="Sistecsoft.png"  WidthRequest="100"  HorizontalOptions="CenterAndExpand" x:Name="SistecsoftImagen"  Grid.Column="0" Grid.Row="0" ></Image>
+                        <Image Source="OFICABLELOGO.png"  WidthRequest="100"  HorizontalOptions="CenterAndExpand"  x:Name="OficableImagen" Grid.Column="1" Grid.Row="0" ></Image>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10">
+
+                        <Label Text="JARABACOA" HorizontalOptions="CenterAndExpand"></Label>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="phone16" Margin="0,0,0,0" HorizontalOptions="Center"></Image>
+                            <Label TextColor="#85BEF7" Text="809-556-4956 / 809-908-9898"></Label>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Image Source="email.png" Margin="0,0,0,0" HorizontalOptions="Center"></Image>
+                            <Label TextColor="#85BEF7" Text="SISTECSOFT@GMAIL.COM" HorizontalOptions="CenterAndExpand"></Label>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                            <Image Source="url.png" Margin="0,0,0,0"></Image>
+                            <Label TextColor="#85BEF7" Text="SISTECSOFT.COM" HorizontalOptions="CenterAndExpand"></Label>
+                        </StackLayout>
+
+                        <Label Text="TERMINOS Y CONDICIONES" HorizontalOptions="CenterAndExpand"></Label>
+
+                    </StackLayout>
+
+
+                </StackLayout>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
