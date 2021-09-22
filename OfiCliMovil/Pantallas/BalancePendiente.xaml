@@ -4,70 +4,75 @@
              x:Class="OfiCliMovil.Pantallas.BalancePendiente"
              Title="Balance Pendiente">
     <ContentPage.Content>
-        <StackLayout>
-            <Grid BackgroundColor="LightGray" >
+        <Grid BackgroundColor="#3e5569" RowSpacing="0">
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" ></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0">
+                <Grid VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" BackgroundColor="#2196F3" Margin="0,0,0,0" HeightRequest="60" VerticalOptions="End" HorizontalOptions="FillAndExpand" x:Name="lytBackNav">
+                        <ImageButton Source="leftarrow.png" Clicked="BtnAtras_Clicked" x:Name="BtnAtras"  BackgroundColor="Transparent" HeightRequest="25" Margin="16,0,0,0" ></ImageButton>
+                        <Label TextColor="White"
+                               Text="BALANCE PENDIENTE"
+                               FontSize="16" 
+                               FontAttributes="Bold"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="StartAndExpand"
+                               Margin="10,0,0,0"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+            <Grid ColumnSpacing="0" Grid.Row="1" RowSpacing="0" BackgroundColor="White">
 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0"/>
                 </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="20*" />
-                    <ColumnDefinition Width="30*" />
-                    <ColumnDefinition Width="30*" />
-                    <ColumnDefinition Width="30*" />
-                </Grid.ColumnDefinitions>
+                <Grid>
+
+                    <StackLayout BackgroundColor="White">
+
+                        <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                            <Label  Grid.Column="0" Margin="8" Grid.Row="1" FontAttributes="Bold" Text="Tipo"/>
+                            <Label  Grid.Column="1" Margin="8" Grid.Row="1" FontAttributes="Bold" Text="Documento"/>
+                            <Label  Grid.Column="2" Margin="8" Grid.Row="1" FontAttributes="Bold" Text="Fecha"/>
+                            <Label  Grid.Column="3" Margin="8" Grid.Row="1" FontAttributes="Bold" Text="Concepto"/>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Label  Grid.Column="0" Text="{Binding Tipo}"/>
+                            <Label  Grid.Column="1" Text="{Binding Documento}"/>
+                            <Label  Grid.Column="2" Text="{Binding Fecha}"/>
+                            <Label  Grid.Column="3" Text="{Binding Concepto}"/>
+                        </StackLayout>
 
 
-                <Label  Grid.Column="0" Margin="8" Grid.Row="0" FontAttributes="Bold" Text="Tipo"/>
-                <Label  Grid.Column="1" Margin="8" Grid.Row="0" FontAttributes="Bold" Text="Documento"/>
-                <Label  Grid.Column="2" Margin="8" Grid.Row="0" FontAttributes="Bold" Text="Fecha"/>
-                <Label  Grid.Column="3" Margin="8" Grid.Row="0" FontAttributes="Bold" Text="Concepto"/>
+                        <StackLayout VerticalOptions="EndAndExpand"  Orientation="Horizontal" Padding="10,10,10,0">
+                            <Label Grid.Column="0" FontSize="14" FontAttributes="Bold" TextColor="Black" Text="Balance:" HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Entry Grid.Column="0" FontSize="12" Text="2222222" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="10,0,10,10">
+                            <Label Grid.Column="0" FontSize="14" FontAttributes="Bold" TextColor="DarkRed" Text="Pago Mínimo:" HorizontalOptions="Start" VerticalOptions="Center" />
+                            <Entry Grid.Column="0" FontSize="12" Text="2222222" TextColor="DarkRed" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                        <Button WidthRequest="80" Text="Realizar Pago"></Button>
+                 
+
+                    </StackLayout>
+
+                </Grid>
+
+
 
             </Grid>
 
+        </Grid>
 
-            <ListView x:Name="listx">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="5">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="20*" />
-                                    <ColumnDefinition Width="30*" />
-                                    <ColumnDefinition Width="30*" />
-                                    <ColumnDefinition Width="30*" />
-                                </Grid.ColumnDefinitions>
-
-
-
-                                <Label  Grid.Column="0" Text="{Binding Tipo}"/>
-                                <Label  Grid.Column="1" Text="{Binding Documento}"/>
-                                <Label  Grid.Column="2" Text="{Binding Fecha}"/>
-                                <Label  Grid.Column="3" Text="{Binding Concepto}"/>
-
-
-                            </Grid>
-
-
-
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-
-            </ListView>
-            <StackLayout Orientation="Horizontal" Padding="10,10,10,0">
-                <Label Grid.Column="0" FontSize="14" FontAttributes="Bold" TextColor="Black" Text="Balance:" HorizontalOptions="Start" VerticalOptions="Center" />
-                <Entry Grid.Column="0" FontSize="12" Text="2222222" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" Padding="10,0,10,10">
-                <Label Grid.Column="0" FontSize="14" FontAttributes="Bold" TextColor="DarkRed" Text="Pago Mínimo:" HorizontalOptions="Start" VerticalOptions="Center" />
-                <Entry Grid.Column="0" FontSize="12" Text="2222222" TextColor="DarkRed" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
-            </StackLayout>
-            <Button WidthRequest="80" Text="Realizar Pago"></Button>
-        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

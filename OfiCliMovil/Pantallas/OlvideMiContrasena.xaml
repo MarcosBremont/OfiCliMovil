@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Behaviors="clr-namespace:MaskSample.Behaviors"
+             x:Class="OfiCliMovil.Pantallas.OlvideMiContrasena">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#3e5569" RowSpacing="0">
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" ></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0">
+                <Grid VerticalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal" BackgroundColor="#2196F3" Margin="0,0,0,0" HeightRequest="60" VerticalOptions="End" HorizontalOptions="FillAndExpand" x:Name="lytBackNav">
+                        <ImageButton Source="leftarrow.png" x:Name="BtnAtras" Clicked="BtnAtras_Clicked" BackgroundColor="Transparent" HeightRequest="25" Margin="16,0,0,0" ></ImageButton>
+                        <Label TextColor="White"
+                               Text="OLVIDÉ MI CONTRASEÑA"
+                               FontSize="16" 
+                               FontAttributes="Bold"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="StartAndExpand"
+                               Margin="10,0,0,0"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+            <Grid ColumnSpacing="0" Grid.Row="1" RowSpacing="0" BackgroundColor="White">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0"/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    
+                    <StackLayout Padding="20" BackgroundColor="White">
+            
+                            <StackLayout>
+
+                                    <Label Text="Por favor digite su numero de cedula a continuación para enviarle una contraseña aleatoria al correo que pertenece a su cuenta"></Label>
+                                    
+                                        <Entry x:Name="txtcedula" Keyboard="Numeric" Placeholder="___-_______-_">
+                                            <Entry.Behaviors>
+                                                <Behaviors:MaskedBehavior Mask="___-_______-_" />
+                                            </Entry.Behaviors>
+                                        </Entry>
+
+                                        <Button x:Name="btnEnviarClave" Clicked="btnEnviarClave_Clicked" CornerRadius="40" BackgroundColor="Orange" Text="Enviar Contraseña" ></Button>
+                            </StackLayout>
+                        
+                    </StackLayout>
+
+                </Grid>
+
+
+
+            </Grid>
+
+        </Grid>
+
+
+
+      
+    </ContentPage.Content>
+</ContentPage>

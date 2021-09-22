@@ -5,7 +5,7 @@ using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace OfiCliMovil.Objetos
+namespace Objetos
 {
     public class ContentPageBase: ContentPage
     {

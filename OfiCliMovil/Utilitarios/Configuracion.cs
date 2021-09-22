@@ -17,7 +17,7 @@ namespace OfiCliMovil
 
 
         //Clases Necesarias
-        public static Page LoginPage = null;
+        public static Page LoginPageS = null;
         public static TabbedPage MenuPage = null;
         public Menu MenuForThread = null;
         public static Page RecargarPage = null;
@@ -29,7 +29,7 @@ namespace OfiCliMovil
         //Conexion de la Api
         //public static string Server = "http://10.0.0.100:7011/";//ApiOfitec Servidor
         //public static string Server = "http://190.6.141.29:7003/";//ApiOfitec Servidor global
-        public static string Server = "";//Conexion Vacia
+        public static string Server = "http://10.0.0.100:7020/";//Conexion Vacia
         //private static string Server = "http://api.oficable.com/"; Plesk
         private static string ApiName = "Api/";
         public static string ServerApi {get { return Server + ApiName;  } }
@@ -120,81 +120,81 @@ namespace OfiCliMovil
         {
         }
 
-        public async static void ReiniciarDatosDeUsuario()
-        {
-            try
-            {
-                ResetGeneral();
+        //public async static void ReiniciarDatosDeUsuario()
+        //{
+        //    try
+        //    {
+        //        ResetGeneral();
 
-                try
-                {
+        //        try
+        //        {
 
-                    //Cerrar hasta el menú...             
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            //Cerrar hasta el menú...             
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
 
-                }
-                catch (Exception ex)
-                {
-                    if (!ex.Message.ToLower().Contains("index"))
-                        await MenuPage.DisplayAlert("", ex.Message, "OK");
-                }
-                finally
-                {
-                    await LoginPage.DisplayAlert("", "Se agotó el tiempo de su sesión...", "Entendido");
-                    LoggedIn = false;
-                    await Task.Delay(1000);
-                    LoggingOut = false;
-                }
-            }
-            catch { }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            if (!ex.Message.ToLower().Contains("index"))
+        //                await MenuPage.DisplayAlert("", ex.Message, "OK");
+        //        }
+        //        finally
+        //        {
+        //            await LoginPage.DisplayAlert("", "Se agotó el tiempo de su sesión...", "Entendido");
+        //            LoggedIn = false;
+        //            await Task.Delay(1000);
+        //            LoggingOut = false;
+        //        }
+        //    }
+        //    catch { }
 
-        }
+        //}
 
-        public async static void ReiniciarDatosDeUsuarioConCerrarSesion()
-        {
-            try
-            {
+        //public async static void ReiniciarDatosDeUsuarioConCerrarSesion()
+        //{
+        //    try
+        //    {
 
-                try
-                {
-                    await new Herramientas().EjecutarSentenciaEnApiLibre($"CerrarSesion/{id_cliente},S,{key}");
+        //        try
+        //        {
+        //            await new Herramientas().EjecutarSentenciaEnApiLibre($"CerrarSesion/{id_cliente},S,{key}");
 
-                    ResetGeneral();
+        //            ResetGeneral();
 
-                    //Cerrar hasta el login...
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
-                    await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            //Cerrar hasta el login...
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
+        //            await Configuracion.MenuPage.Navigation.PopModalAsync(false);
 
-                }
-                catch (Exception ex)
-                {
-                    if (!ex.Message.ToLower().Contains("index"))
-                        await LoginPage.DisplayAlert("", ex.Message, "OK");
-                }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            if (!ex.Message.ToLower().Contains("index"))
+        //                await LoginPage.DisplayAlert("", ex.Message, "OK");
+        //        }
 
-            }
-            catch { }
-            finally
-            {
-                LoggedIn = false;
-            }
+        //    }
+        //    catch { }
+        //    finally
+        //    {
+        //        LoggedIn = false;
+        //    }
 
-        }
+        //}
 
         public static void ResetGeneral()
         {

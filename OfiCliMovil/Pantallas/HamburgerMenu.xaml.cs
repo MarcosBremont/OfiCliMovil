@@ -70,5 +70,14 @@ namespace OfiCliMovil.Pantallas
                 set;
             }
         }
+
+        private async void BtnCerrarSesion_Clicked(object sender, EventArgs e)
+        {
+            if (await DisplayAlert("Información", "¿Desea cerrar sesión?", "SI", "NO"))
+            {
+                LoginPage loginPage = new LoginPage();
+                await Navigation.PushModalAsync(loginPage);
+            }
+        }
     }
 }

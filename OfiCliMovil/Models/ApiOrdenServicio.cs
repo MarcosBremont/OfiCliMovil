@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
-using OfiTec.Modelo;
+using OfiCliMovil.Models;
 
-namespace OfiCliMovil.Modelo
+namespace OfiCliMovil.Models
 {
     public class ApiOrdenServicio
     {
@@ -18,24 +18,24 @@ namespace OfiCliMovil.Modelo
             // constructor
         }
 
-        public async Task<Cliente> IniciarSesion(String cedula, String clave)
+
+        public async Task<EClienteFull> IniciarSesion(String cedula, String clave)
         {
-
-            var result = await herramientas.EjecutarSentenciaEnApiLibre($"OfiCliMovil/IniciarSesion/{cedula}/{clave}");
-            var tecnicoResult = Newtonsoft.Json.JsonConvert.DeserializeObject<Cliente>(result);
-
-            if (tecnicoResult.respuesta == "OK")
-            {
-                Cliente.IsLoginTecnico = true;
-                Cliente.NombreTecnico = tecnicoResult.nombre;
-                Cliente.TokenTecnico = tecnicoResult.token;
-                Cliente.CodigoTecnico = tecnicoResult.codigo;
-                Cliente.ImeiTecnico = tecnicoResult.imei;
-
-            }
-
-            return tecnicoResult;
+            var result = await herramientas.EjecutarSentenciaEnApiLibre($"Cliente/IniciarSesion/{cedula}/{clave}");
+            var apiResult = Newtonsoft.Json.JsonConvert.DeserializeObject<EClienteFull>(result);
+            return apiResult;
         }
+
+
+        public async Task<EClienteFull> RecuperarClave(string cedula)
+        {
+            var respuesta = await herramientas.EjecutarSentenciaEnApiLibre($"/Cliente/RecuperarClave/{cedula}");
+            var cliente = Newtonsoft.Json.JsonConvert.DeserializeObject<EClienteFull>(respuesta);
+            return cliente;
+        }
+
+
+
 
         //public async Task<List<OrdenServi>> GetListadoDeOrdenes(int tiposervicio, int tecnico, string progresoorden, string sector)
         //{

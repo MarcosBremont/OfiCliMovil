@@ -29,6 +29,7 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                    <Button BackgroundColor="White" x:Name="BtnCerrarSesion" Clicked="BtnCerrarSesion_Clicked"  Text="CERRAR SESIÓN"></Button>
                 </StackLayout>
             </StackLayout>
         </ContentPage>

@@ -7,12 +7,14 @@ namespace OfiCliMovil
 {
     public partial class App : Application
     {
+        public static String Cedula { get; set; }
+        public static String Clave { get; set; }
         public App()
         {
             InitializeComponent();
             Device.SetFlags(new[] { "RadioButton_Experimental" });
 
-            MainPage = new Pantallas.HamburgerMenu();
+            MainPage = new Pantallas.LoginPage();
         }
 
         protected override void OnStart()

@@ -27,7 +27,13 @@ namespace OfiCliMovil.Pantallas
             this.Usr_List.Add(new UserModel { documento = "4525", valororiginal = "2,155.00", pendiente = "1,505.00", concepto = "MENSUALIDAD CABLE" });
 
 
-            listx.ItemsSource = this.Usr_List;
+            //listx.ItemsSource = this.Usr_List;
+
+        }
+
+        private async void BtnAtras_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
 
         }
     }

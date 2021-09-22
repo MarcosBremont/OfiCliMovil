@@ -1153,7 +1153,6 @@ namespace OfiCliMovil
                 string url = Configuracion.ServerApi + urlPart;
 
                 HttpClient clientHTTP = new HttpClient();
-                clientHTTP.DefaultRequestHeaders.Add("token", OfiCliMovil.Models.Tecnico.TokenTecnico);
                 var response = await clientHTTP.GetAsync(url);
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)

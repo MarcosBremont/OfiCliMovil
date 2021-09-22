@@ -21,5 +21,11 @@ namespace OfiCliMovil.Pantallas
         {
             await Navigation.PushModalAsync(new BalancePendiente());
         }
+
+        private async void btnUltimoPago_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new BalancePendiente());
+
+        }
     }
 }
