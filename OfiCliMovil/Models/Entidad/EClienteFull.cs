@@ -92,6 +92,17 @@ namespace OfiCliMovil.Models.Entidad
         public DateTime fechamesgratis { get; set; }
         public DateTime fechafelicitado { get; set; }
         public List<EServicio> Servicios { get; set; }
+
+        public string localidad { get; set; }
+        public string sector { get; set; }
+        public string calle { get; set; }
+        public string subcalle { get; set; }
+        public DateTime fechaultimopago { get; set; }
+        public double montoultimopago { get; set; }
+        public double balanceafavor { get; set; }
+        public int documentos { get; set; }
+
+
         #endregion
 
         public EClienteFull()

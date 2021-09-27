@@ -15,7 +15,7 @@
 
                 <Label FontAttributes="Bold" TextColor="#3f3f3f" Text="CEDULA"></Label>
 
-                <Entry TextColor="#3f3f3f" x:Name="TxtUsuario" Keyboard="Numeric"  Placeholder="___-_______-_">
+                <Entry Text="000-0000000-2" TextColor="#3f3f3f" x:Name="TxtUsuario" Keyboard="Numeric"  Placeholder="___-_______-_">
                     <Entry.Behaviors>
                         <Behaviors:MaskedBehavior Mask="___-_______-_" />
                     </Entry.Behaviors>
@@ -23,7 +23,7 @@
 
                 <Label FontAttributes="Bold" TextColor="#3f3f3f" Text="CONTRASEÑA"></Label>
 
-                <Entry TextColor="#3f3f3f" TextTransform="Uppercase" IsPassword="True" x:Name="TxtClave"  Margin="0,0,0,0" />
+                <Entry  Text="MTDZ" TextColor="#3f3f3f" TextTransform="Uppercase" IsPassword="True" x:Name="TxtClave"  Margin="0,0,0,0" />
 
                 <Button x:Name="BtnIniciarSesion" Clicked="BtnIniciarSesion_Clicked"  Margin="0,15,0,0" CornerRadius="20" BackgroundColor="#2196F3" TextColor="White" Text="Iniciar Sesión" ></Button>
 

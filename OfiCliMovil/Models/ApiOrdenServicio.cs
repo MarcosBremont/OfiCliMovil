@@ -19,12 +19,45 @@ namespace OfiCliMovil.Models
         }
 
 
-        public async Task<EClienteFull> IniciarSesion(String cedula, String clave)
+        public async Task<EClienteFull> IniciarSesion(string cedula, string clave)
         {
             var result = await herramientas.EjecutarSentenciaEnApiLibre($"Cliente/IniciarSesion/{cedula}/{clave}");
             var apiResult = Newtonsoft.Json.JsonConvert.DeserializeObject<EClienteFull>(result);
             return apiResult;
         }
+
+        //public async Task<List<EFactura>> GetListadoDeBalancePendienteAsync(int idCliente)
+        //{
+        //    List<EFactura> facturas = new List<EFactura>();
+
+
+        //    var result = await herramientas.EjecutarSentenciaEnApiLibre($"Cliente/ObtenerFacturasPendiente/{idCliente}");
+        //    facturas = Newtonsoft.Json.JsonConvert.DeserializeObject<List<EFactura>>(result);
+
+
+        //    return facturas;
+        //} // Fin del método ObtenerMenu
+
+
+        public async Task<List<EFactura>> GetListadoDeBalancePendiente(int idCliente)
+        {
+
+            var result = await herramientas.EjecutarSentenciaEnApiLibre($"Cliente/ObtenerFacturasPendiente/{idCliente}");
+            var listado_de_ordenes_servicio = Newtonsoft.Json.JsonConvert.DeserializeObject<List<EFactura>>(result);
+
+            return listado_de_ordenes_servicio;
+        } // Fin del método ObtenerMenu
+
+
+        public async Task<List<EFactura>> GetListadoDePagosRealizados(int idCliente)
+        {
+
+            var result = await herramientas.EjecutarSentenciaEnApiLibre($"Cliente/ObtenerPagosRealizados/{idCliente}");
+            var listado_de_ordenes_servicio = Newtonsoft.Json.JsonConvert.DeserializeObject<List<EFactura>>(result);
+
+            return listado_de_ordenes_servicio;
+        } // Fin del método ObtenerMenu
+
 
 
         public async Task<EClienteFull> RecuperarClave(string cedula)

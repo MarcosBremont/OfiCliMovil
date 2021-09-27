@@ -63,6 +63,7 @@ namespace OfiCliMovil.Pantallas
                     {
                         App.Cedula = TxtUsuario.Text;
                         App.Clave = ClaveEnMayuscula;
+                        App.Id_Cliente = apiResult.codigo_cli;
                         toastConfig.MostrarNotificacion($"Bienvenido {apiResult.nombre_cli}", ToastPosition.Top, 3, "#51C560");
                         await Navigation.PushModalAsync(new HamburgerMenu());
                         int codigocli = apiResult.codigo_cli;

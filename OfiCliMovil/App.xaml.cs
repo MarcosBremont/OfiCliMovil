@@ -7,6 +7,7 @@ namespace OfiCliMovil
 {
     public partial class App : Application
     {
+        public static int Id_Cliente { get; set; }
         public static String Cedula { get; set; }
         public static String Clave { get; set; }
         public App()

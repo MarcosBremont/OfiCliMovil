@@ -7,22 +7,23 @@
         <ScrollView>
             <StackLayout BackgroundColor="White">
 
-                <StackLayout  Margin="30">
-                   
+                <StackLayout  Margin="15">
+
+                    <Label x:Name="lblNombreUsuario" HorizontalOptions="Center" FontSize="18" FontAttributes="Bold"></Label>
+                    
                     <Button 
                         Grid.Row="0"
                         x:Name="btnPendiente"
-                        Text="PENDIENTE"
-                        
+                        FontSize="14"
                         TextColor="White"
-                        ImageSource="user32.png"
+                        ImageSource="user24.png"
                         ContentLayout="top"
                         BackgroundColor="#FC5340"
                         Clicked="btnPendiente_Clicked"
                         CornerRadius="8">
                     </Button>
 
-                    <Button 
+                    <!--<Button 
                         Grid.Row="1"
                         x:Name="btnPagoMinimo"
                         Text="PAGO MINIMO"
@@ -31,12 +32,13 @@
                         ImageSource="dollartag32.png"
                         BackgroundColor="#15B5E9"
                         CornerRadius="8">
-                    </Button>
+                    </Button>-->
 
                     <Button 
                         Grid.Row="2"
                         x:Name="btnFinServicio"
                         Text="FIN DE SERVICIO"
+                        FontSize="14"
                         TextColor="White"
                         ContentLayout="top"
                         ImageSource="sandclock32white.png"
@@ -48,8 +50,9 @@
                         Grid.Row="3"
                         x:Name="btnEstado"
                         Text="ESTADO"
+                        FontSize="14"
                         TextColor="White"
-                        HeightRequest="80"
+                        HeightRequest="100"
                         ContentLayout="top"
                         ImageSource="estetoscopio32.png"
                         BackgroundColor="#DCB201"
@@ -60,10 +63,11 @@
                         Grid.Row="2"
                         x:Name="btnCuotaMensual"
                         Text="CUOTA MENSUAL"
+                        FontSize="14"
                         TextColor="White"
                         ContentLayout="top"
                         ImageSource="c32.png"
-                        HeightRequest="80"
+                        HeightRequest="100"
                         BackgroundColor="#00697C"
                         CornerRadius="8">
                     </Button>
@@ -72,17 +76,18 @@
                         Grid.Row="3"
                         x:Name="btnUltimoPago"
                         Text="ULTIMO PAGO"
+                        FontSize="14"
                         TextColor="White"
                         ContentLayout="top"
                         ImageSource="tarjetadecredito32.png"
-                        HeightRequest="80"
+                        HeightRequest="120"
                         BackgroundColor="#EE8D00"
                         Clicked="btnUltimoPago_Clicked"
                         CornerRadius="8">
                     </Button>
 
 
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0">
+                    <!--<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0">
                         <Image Source="Sistecsoft.png"  WidthRequest="100"  HorizontalOptions="CenterAndExpand" x:Name="SistecsoftImagen"  Grid.Column="0" Grid.Row="0" ></Image>
                         <Image Source="OFICABLELOGO.png"  WidthRequest="100"  HorizontalOptions="CenterAndExpand"  x:Name="OficableImagen" Grid.Column="1" Grid.Row="0" ></Image>
                     </StackLayout>
@@ -105,7 +110,7 @@
 
                         <Label Text="TERMINOS Y CONDICIONES" HorizontalOptions="CenterAndExpand"></Label>
 
-                    </StackLayout>
+                    </StackLayout>-->
 
 
                 </StackLayout>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OfiCliMovil.Pantallas.AcercaDe"
+             Title="Acerca De">
+    <ContentPage.Content>
+        <Grid RowSpacing="0" BackgroundColor="White">
+
+            <Grid.RowDefinitions>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnPlatform x:TypeArguments="GridLength" iOS="90" Android="60" />
+                    </RowDefinition.Height>
+                </RowDefinition>
+
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+
+
+
+
+            <StackLayout Grid.Row="1" Spacing="0">
+                <ScrollView VerticalOptions="FillAndExpand">
+                    <StackLayout Padding="30,5,30,30" Spacing="0" VerticalOptions="FillAndExpand">
+
+                        <Image Source="LogoOfiTec.png" WidthRequest="100"></Image>
+                        <StackLayout>
+                            <Label TextColor="Black"
+                                   Text="..."
+                                   FontSize="15"
+                                   Opacity="0.8"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Start"
+                                   HorizontalOptions="CenterAndExpand"
+                                   x:Name="lblNombreCompañia"
+                                   Margin="0,10,0,0"/>
+
+                            <Label TextColor="Black"
+                                   Text="Oficli Movil surge de la necesidad de mejorar el proceso de seguimiento de los técnicos de la empresa, ahorrándole tiempo a la misma y optimizando los procesos ya existentes."
+                                   FontSize="15"
+                                   Opacity="0.8"
+                                   Margin="0,0,0,10"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="StartAndExpand"/>
+
+
+                        </StackLayout>
+
+                        <Label TextColor="Black" FontAttributes="Bold" Text="(Desarrollada por)" FontSize="13" Opacity="0.8" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0" />
+
+                        <Image Source="logosistecsoft.jpg" x:Name="LogoSistecsoft" Aspect="AspectFit" HeightRequest="120" HorizontalOptions="FillAndExpand" />
+
+
+                        <StackLayout Spacing="10" VerticalOptions="FillAndExpand">
+                            <Label TextColor="Black" Text="SISTECSOFT COMPUTADORAS S.L.R." FontSize="15" Opacity="0.8" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" />
+                            <StackLayout>
+
+                                <Label TextColor="Black" Text="C/ 16 de Agosto #12, Jarabacoa, Rep, Dom." FontSize="13" Opacity="0.8" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" />
+
+                                <Label TextColor="Black" Text="Tel. 809-574-7015 Cel. 809-223-4512" FontSize="13" Opacity="0.8" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" />
+
+                                <Label TextColor="Black" Text="Email. soporte@sistecsoft.com" FontSize="13" Opacity="0.8" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" />
+
+                                <Label TextColor="DodgerBlue" Text="http://sistecsoft.com" FontSize="15" Opacity="0.8" HorizontalTextAlignment="Center" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" x:Name="lytPaginaSistecsoft"/>
+                            </StackLayout>
+
+                            <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Spacing="0" Margin="0,0,0,20">
+
+                                <Label TextColor="Black" Text="Versión de OfiCliMovil" FontSize="17" VerticalOptions="End" HorizontalOptions="CenterAndExpand" />
+
+                                <!--<StackLayout Opacity="0.6" Margin="0,5,0,0">
+                                    <Label TextColor="Black" Text="2.0.5" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" FontSize="15" />
+                                </StackLayout>-->
+
+                                <StackLayout HorizontalOptions="CenterAndExpand"  Opacity="0.6" Margin="0,5,0,0" Padding="0,0,0,0">
+                                    <Label >
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding version_ofitec}" x:Name="lblVersion" TextColor="#333" FontSize="15" ></Span>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+
+                                <StackLayout Opacity="0.6" Spacing="0">
+                                    <Label TextColor="Black" Text="Online" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" FontSize="15" x:Name="txtConectionType" />
+                                </StackLayout>
+
+                            </StackLayout>
+
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

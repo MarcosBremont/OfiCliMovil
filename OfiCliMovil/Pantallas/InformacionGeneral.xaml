@@ -12,12 +12,12 @@
                 <Entry FontAttributes="Bold" x:Name="txtnombrecli" IsEnabled="False" Text="Marcos Bremont"></Entry>
                 <Label FontSize="16" FontAttributes="Bold" Text="Cedula"/>
                 <Entry FontAttributes="Bold" x:Name="txtcedula" IsEnabled="False" Text="402-1385476-9"></Entry>
-                <Label FontSize="16" FontAttributes="Bold" Text="Físico"/>
-                <Entry FontAttributes="Bold" IsEnabled="False" Text=""></Entry>
+                <!--<Label FontSize="16" FontAttributes="Bold" Text="Físico"/>
+                <Entry FontAttributes="Bold" x:Name="txtContratoFisico" IsEnabled="False" Text=""></Entry>-->
                 <StackLayout Orientation="Vertical">
                     <Label FontSize="16" FontAttributes="Bold" Text="Télefono"/>
                     <StackLayout Orientation="Horizontal">
-                        <Entry FontAttributes="Bold" x:Name="txttelefono" IsEnabled="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Text="___-___-____"></Entry>
+                        <Entry FontAttributes="Bold" x:Name="txttelefono" IsEnabled="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Entry>
                         <ImageButton WidthRequest="40" BackgroundColor="Transparent" Source="plus3.png"></ImageButton>
                     </StackLayout>
                 </StackLayout>
@@ -25,8 +25,18 @@
                 <Frame BackgroundColor="#337AB7" CornerRadius="8" Padding="5">
                     <Label FontAttributes="Bold" x:Name="lblEstado" FontSize="20" HorizontalOptions="CenterAndExpand" TextColor="White" ></Label>
                 </Frame>
-                <Label FontSize="16" FontAttributes="Bold" Text="Fecha"/>
-                <Entry FontAttributes="Bold" x:Name="TxtFecha" IsEnabled="False" Text="26/09/2020"></Entry>
+
+                <Label FontSize="16" FontAttributes="Bold" Text="Fin Servicio"/>
+                <Frame BackgroundColor="#00BA8B" CornerRadius="8" Padding="5">
+                    <Label FontAttributes="Bold" x:Name="lblfinservicio"  FontSize="20" HorizontalOptions="CenterAndExpand" TextColor="White" ></Label>
+                </Frame>
+
+                <Label FontSize="16" FontAttributes="Bold" Text="Fin Contrato"/>
+                <Frame BackgroundColor="#00BA8B" CornerRadius="8" Padding="5">
+                    <Label FontAttributes="Bold" x:Name="lblfincontrato"  FontSize="20" HorizontalOptions="CenterAndExpand" TextColor="White" ></Label>
+                </Frame>
+                <Label FontSize="16" FontAttributes="Bold" Text="Fecha Estado"/>
+                <Entry FontAttributes="Bold" x:Name="TxtFecha" IsEnabled="False" ></Entry>
                 <Label FontSize="16" FontAttributes="Bold" Text="Apodo"/>
                 <Entry FontAttributes="Bold" x:Name="txtApodo" IsEnabled="False" Text="Maiky"></Entry>
                 <Label FontSize="16" FontAttributes="Bold" Text="E-mail"/>
@@ -39,22 +49,16 @@
                 <Entry FontAttributes="Bold" IsEnabled="False" x:Name="txtsector" Text="Sabaneta"></Entry>
                 <Label FontSize="16" FontAttributes="Bold" Text="Subcalle"/>
                 <Entry FontAttributes="Bold" IsEnabled="False"  x:Name="txtsubcalle"  Text=""></Entry>
-                <Label FontSize="16" FontAttributes="Bold" Text="Fin Servicio"/>
-                <Frame BackgroundColor="#00BA8B" CornerRadius="8" Padding="5">
-                    <Label FontAttributes="Bold" x:Name="lblfinservicio"  FontSize="20" HorizontalOptions="CenterAndExpand" TextColor="White" Text="21/06/2021"></Label>
-                </Frame>
-                <Label FontSize="16" FontAttributes="Bold" Text="Penalidad"/>
-                <Entry FontAttributes="Bold" x:Name="txtpenalidad" IsEnabled="False" Text=""></Entry>
-                <Label FontSize="16" FontAttributes="Bold" Text="Fin Contrato"/>
-                <Entry FontAttributes="Bold" x:Name="txfechafincontrato" IsEnabled="False" Text="21/06/2021"></Entry>
+
+                <Entry FontAttributes="Bold" x:Name="txfechafincontrato" IsEnabled="False" ></Entry>
                 <Label FontSize="16" FontAttributes="Bold" Text="Ejecutivo"/>
                 <Entry FontAttributes="Bold" x:Name="txtejecutivo" IsEnabled="False" Text=""></Entry>
                 <Label FontSize="16" FontAttributes="Bold" Text="Cuota Mensual"/>
                 <Entry FontAttributes="Bold" IsEnabled="False" x:Name="txtcuotamensual" Text="$ 52.00"></Entry>
-                <Label FontSize="16" FontAttributes="Bold" Text="Cobrador"/>
+                <!--<Label FontSize="16" FontAttributes="Bold" Text="Cobrador"/>
                 <Entry FontAttributes="Bold" IsEnabled="False" x:Name="txtcobrador" Text=""></Entry>
                 <Label FontSize="16" FontAttributes="Bold" Text="Vendedor"/>
-                <Entry FontAttributes="Bold" IsEnabled="False" x:Name="txtvendedor" Text=""></Entry>
+                <Entry FontAttributes="Bold" IsEnabled="False" x:Name="txtvendedor" Text=""></Entry>-->
                 <Label FontSize="16" FontAttributes="Bold" Text="Acuerdo"/>
                 <Frame BackgroundColor="#337AB7" CornerRadius="8" Padding="5">
                     <Label FontAttributes="Bold" x:Name="lblsinacuerdos"  FontSize="20" HorizontalOptions="CenterAndExpand" TextColor="White" Text="SIN ACUERDOS"></Label>
@@ -72,8 +76,8 @@
                 <Frame BackgroundColor="#5CB85C" CornerRadius="8" Padding="5">
                     <Label x:Name="lblestadoserviciointernet" FontAttributes="Bold"  FontSize="20" HorizontalOptions="CenterAndExpand" TextColor="White" Text="Activo"></Label>
                 </Frame>
-                <Label FontSize="16" FontAttributes="Bold" Text="Fecha Contrato"/>
-                <Entry x:Name="lblfechacontrato" FontAttributes="Bold" IsEnabled="False" Text="26/09/2020"></Entry>
+                <!--<Label FontSize="16" FontAttributes="Bold" Text="Fecha Contrato"/>
+                <Entry x:Name="lblfechacontrato" FontAttributes="Bold" IsEnabled="False" ></Entry>-->
 
 
             </StackLayout>
