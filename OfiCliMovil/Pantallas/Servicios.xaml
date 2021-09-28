@@ -4,36 +4,85 @@
              x:Class="OfiCliMovil.Pantallas.Servicios"
              Title="Servicios">
     <ContentPage.Content>
-        <StackLayout>
-            <Frame>
-                <StackLayout>
-                    <Label Text="Cable"></Label>
-                    <Label Text="1sad31sa5"></Label>
-                    <Button x:Name="VerPlanCable" Clicked="VerPlanCable_Clicked" Text="Ver Plan"></Button>
-                </StackLayout>
-            </Frame>
+        <StackLayout Padding="10">
+            
 
-            <Frame x:Name="FramePlanCable" IsVisible="false">
-                <StackLayout >
-                    <Label Text="Plan"></Label>
-                    <Label Text="Paquete Basico"></Label>
-                </StackLayout>
-            </Frame>
+            <ListView Margin="15" x:Name="lsv_Servicio_Cable" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
 
-            <Frame>
-                <StackLayout>
-                    <Label Text="Internet"></Label>
-                    <Label Text="1sad31sa5"></Label>
-                    <Button x:Name="VerPlanInternet" Clicked="VerPlanInternet_Clicked" Text="Ver Plan"></Button>
-                </StackLayout>
-            </Frame>
+                    <DataTemplate >
 
-            <Frame x:Name="FramePlanInternet" IsVisible="false">
-                <StackLayout>
-                    <Label Text="Plan"></Label>
-                    <Label Text="2 MB/ 1 MB"></Label>
-                </StackLayout>
-            </Frame>
+                        <ViewCell>
+
+                            <Frame BackgroundColor="White" CornerRadius="15" >
+
+                                <StackLayout >
+
+                                
+                                        <StackLayout>
+                                            <Label Text="Cable"></Label>
+                                            <Label Text="{Binding serie_caja}"></Label>
+                                        </StackLayout>
+                                    
+
+                                        <StackLayout >
+                                            <Label Text="Plan"></Label>
+                                            <Label Text="{Binding paquete}"></Label>
+                                        </StackLayout>
+
+
+
+
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+
+
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+
+
+
+
+
+
+            <ListView  x:Name="lsv_Servicio_Internet" SeparatorVisibility="None" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+
+                    <DataTemplate >
+
+                        <ViewCell>
+
+                            <Frame BackgroundColor="White" CornerRadius="15" HasShadow="False" Margin="5">
+
+                                <StackLayout Padding="10">
+
+
+                                        <StackLayout>
+                                            <Label Text="Internet"></Label>
+                                            <Label Text="{Binding serie_cablemodem}"></Label>
+                                        </StackLayout>
+
+                                        <StackLayout>
+                                            <Label Text="Plan"></Label>
+                                            <Label Text="{Binding nombre_Plan}"></Label>
+                                        </StackLayout>
+
+
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+
+
+                </ListView.ItemTemplate>
+            </ListView>
+
         </StackLayout>
+
+
     </ContentPage.Content>
 </ContentPage>

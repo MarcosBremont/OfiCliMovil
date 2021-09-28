@@ -69,6 +69,26 @@ namespace OfiCliMovil.Models
         } // Fin del método ObtenerMenu
 
 
+        public async Task<List<EOrdenes>> GetListadoDeEquiposCable(int idCliente)
+        {
+
+            var result = await herramientas.EjecutarSentenciaEnApiLibre($"Cliente/ObtenerEquiposCable/{idCliente}");
+            var listado_de_equipos_cable = Newtonsoft.Json.JsonConvert.DeserializeObject<List<EOrdenes>>(result);
+
+            return listado_de_equipos_cable;
+        } // Fin del método ObtenerMenu
+
+
+        public async Task<List<EOrdenes>> GetListadoDeEquiposInternet(int idCliente)
+        {
+
+            var result = await herramientas.EjecutarSentenciaEnApiLibre($"Cliente/ObtenerEquiposInternet/{idCliente}");
+            var listado_de_equipos_internet = Newtonsoft.Json.JsonConvert.DeserializeObject<List<EOrdenes>>(result);
+
+            return listado_de_equipos_internet;
+        } // Fin del
+
+
 
 
         public async Task<EClienteFull> RecuperarClave(string cedula)
