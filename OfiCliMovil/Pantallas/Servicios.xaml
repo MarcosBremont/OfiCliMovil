@@ -1,12 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="OfiCliMovil.Pantallas.Servicios">
+             x:Class="OfiCliMovil.Pantallas.Servicios"
+             Title="Servicios">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame>
+                <StackLayout>
+                    <Label Text="Cable"></Label>
+                    <Label Text="1sad31sa5"></Label>
+                    <Button x:Name="VerPlanCable" Clicked="VerPlanCable_Clicked" Text="Ver Plan"></Button>
+                </StackLayout>
+            </Frame>
+
+            <Frame x:Name="FramePlanCable" IsVisible="false">
+                <StackLayout >
+                    <Label Text="Plan"></Label>
+                    <Label Text="Paquete Basico"></Label>
+                </StackLayout>
+            </Frame>
+
+            <Frame>
+                <StackLayout>
+                    <Label Text="Internet"></Label>
+                    <Label Text="1sad31sa5"></Label>
+                    <Button x:Name="VerPlanInternet" Clicked="VerPlanInternet_Clicked" Text="Ver Plan"></Button>
+                </StackLayout>
+            </Frame>
+
+            <Frame x:Name="FramePlanInternet" IsVisible="false">
+                <StackLayout>
+                    <Label Text="Plan"></Label>
+                    <Label Text="2 MB/ 1 MB"></Label>
+                </StackLayout>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

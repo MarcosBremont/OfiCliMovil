@@ -64,8 +64,8 @@ namespace OfiCliMovil.Pantallas
                 lsv_balancependiente.ItemsSource = datos;
                 lsv_balancependiente.IsVisible = true;
 
-                txtBalance.Text = string.Format("{0:N2}", datos.Sum(n => n.balance));
-
+                txtBalance.Text = string.Format("{0:N2}", datos.Sum(n => n.valor));
+                txtcantidad.Text = datos.Count.ToString();
 
             }
             catch (Exception ex)

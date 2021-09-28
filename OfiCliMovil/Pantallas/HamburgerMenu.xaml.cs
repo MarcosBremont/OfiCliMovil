@@ -31,7 +31,7 @@ namespace OfiCliMovil.Pantallas
                 new Menu{ Page= new RealizarPago(), MenuTitle="Realizar Pago",  MenuDetail="",icon="dollarIcon2.png"},
                 new Menu{ Page= new PagosRealizados(), MenuTitle="Pagos Realizados",  MenuDetail="",icon="creditcard.png"},
                 new Menu{ Page= new HistorialdeOrdenes(), MenuTitle="Historial de Ordenes",  MenuDetail="",icon="history.png"},
-                new Menu{ Page= new ReporteAveria(), MenuTitle="Reporte de Averia",  MenuDetail="",icon="herramientas.png"},
+                new Menu{ Page= new ReporteAveria(), MenuTitle="Reporte de Averia",  MenuDetail="",icon="problema.png"},
                 new Menu{ Page= new Servicios(), MenuTitle="Servicios",  MenuDetail="",icon="herramientas.png"},
                 new Menu{ Page= new AcercaDe(), MenuTitle="Acerca De",  MenuDetail="",icon="about64.png"}
             };

@@ -15,6 +15,33 @@ namespace OfiCliMovil.Pantallas
         public Servicios()
         {
             InitializeComponent();
+            FramePlanCable.IsVisible = false;
+            FramePlanInternet.IsVisible = false;
+        }
+
+        private void VerPlanInternet_Clicked(object sender, EventArgs e)
+        {
+            if (FramePlanInternet.IsVisible == false)
+            {
+                FramePlanInternet.IsVisible = true;
+            }
+            else
+            {
+                FramePlanInternet.IsVisible = false;
+            }
+        }
+
+        private void VerPlanCable_Clicked(object sender, EventArgs e)
+        {
+            if (FramePlanCable.IsVisible == false)
+            {
+                FramePlanCable.IsVisible = true;
+            }
+            else
+            {
+                FramePlanCable.IsVisible = false;
+            }
+
         }
     }
 }

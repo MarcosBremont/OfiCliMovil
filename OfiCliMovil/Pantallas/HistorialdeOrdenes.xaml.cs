@@ -1,4 +1,5 @@
 ﻿using EjemploListView.Modelo;
+using OfiCliMovil.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,55 +17,60 @@ namespace OfiCliMovil.Pantallas
         public HistorialdeOrdenes()
         {
             InitializeComponent();
-            banderaClick = true;
+            LlenarBalancePendiente();
+
         }
 
-        private static bool banderaClick;
-
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
-            LlenarMenu();
-            await Task.Yield();
-        }
-
-        public async void LlenarMenu()
-        {
-            EjemploListView1Model oEjemploListView1Model = new EjemploListView1Model();
-            listViewEjemplo1.ItemsSource = null;
-            listViewEjemplo1.ItemsSource = oEjemploListView1Model.ObtenerMenuEjemplo1();
-            listViewEjemplo1.ItemSelected += OnClickOpcionSeleccionada;
-        }
-
-        private async void OnClickOpcionSeleccionada(object sender, SelectedItemChangedEventArgs e)
-        {
-            if (banderaClick)
+            try
             {
-                var item = e.SelectedItem as MenuEjemplo1;
-                if ((item != null) && (item.Habilitado))
-                {
-                    var oSeleccionado = item.idOpcion;
-                    banderaClick = false;
-                    switch (oSeleccionado)
-                    {
-                        case 1:
-                            Navigation.PushAsync(new MisMetodosDePago());
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            break;
-                        case 4:
-                            break;
-                    }
-                    await Task.Run(async () =>
-                    {
-                        await Task.Delay(500);
-                        banderaClick = true;
-                    });
+                base.OnAppearing();
+                this.IsBusy = false;
+                LlenarBalancePendiente();
+                lsv_historial_ordenes_pendientes.Refreshing += Lsv_historial_ordenes_pendientes_Refreshing; ;
+            }
+            catch (Exception ex)
+            {
 
-                }
-            } // fin banderaCLick
-        }// fin metodo OnClickOpcionSeleccionada
+            }
+
+        }
+
+        private void Lsv_historial_ordenes_pendientes_Refreshing(object sender, EventArgs e)
+        {
+            try
+            {
+                LlenarBalancePendiente();
+                lsv_historial_ordenes_pendientes.IsRefreshing = false;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+
+        public async Task LlenarBalancePendiente()
+        {
+            try
+            {
+                lsv_historial_ordenes_pendientes.IsVisible = false;
+                ApiOrdenServicio apiOrdenServicio = new OfiCliMovil.Models.ApiOrdenServicio();
+                lsv_historial_ordenes_pendientes.ItemsSource = null;
+
+                var datos = await apiOrdenServicio.GetHistorialOrdenes(App.Id_Cliente);
+
+                lsv_historial_ordenes_pendientes.ItemsSource = datos;
+                lsv_historial_ordenes_pendientes.IsVisible = true;
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
 
 
 

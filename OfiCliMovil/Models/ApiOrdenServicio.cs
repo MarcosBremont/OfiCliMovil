@@ -49,14 +49,25 @@ namespace OfiCliMovil.Models
         } // Fin del método ObtenerMenu
 
 
-        public async Task<List<EFactura>> GetListadoDePagosRealizados(int idCliente)
+        public async Task<List<ERecibo>> GetListadoDePagosRealizados(int idCliente)
         {
 
             var result = await herramientas.EjecutarSentenciaEnApiLibre($"Cliente/ObtenerPagosRealizados/{idCliente}");
-            var listado_de_ordenes_servicio = Newtonsoft.Json.JsonConvert.DeserializeObject<List<EFactura>>(result);
+            var listado_de_ordenes_servicio = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ERecibo>>(result);
 
             return listado_de_ordenes_servicio;
         } // Fin del método ObtenerMenu
+
+
+        public async Task<List<EOrdenes>> GetHistorialOrdenes(int idCliente)
+        {
+
+            var result = await herramientas.EjecutarSentenciaEnApiLibre($"Cliente/ObtenerHistorialOrdenes/{idCliente}");
+            var listado_de_ordenes_servicio = Newtonsoft.Json.JsonConvert.DeserializeObject<List<EOrdenes>>(result);
+
+            return listado_de_ordenes_servicio;
+        } // Fin del método ObtenerMenu
+
 
 
 
@@ -67,6 +78,16 @@ namespace OfiCliMovil.Models
             return cliente;
         }
 
+
+        public async Task<Result> CrearAveria(EOrdenes ordenes)
+        {
+            var body_data = JsonConvert.SerializeObject(ordenes);
+            var result = await herramientas.EjecutarMetodoPost($"Cliente/crearaveria", body_data);
+            var apiResult = Newtonsoft.Json.JsonConvert.DeserializeObject<Result>(result);
+            return apiResult;
+        }
+
+  
 
 
 

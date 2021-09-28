@@ -1,14 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<Objetos:ContentPageBase  xmlns:Objetos="clr-namespace:Objetos" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OfiCliMovil.Pantallas.ReporteAveria"
              Title="Reporte Averia">
-    <ContentPage.Content>
-        <StackLayout Padding="15">
+    <StackLayout Padding="20">
+
+        <Frame HasShadow="True">
             <StackLayout>
-                <Entry Placeholder="Describa el problema" ></Entry>
-                <Button Text="Reportar Averia"></Button>
+
+                <Frame BackgroundColor="#F0F0F0" Padding="5" CornerRadius="10">
+                    
+                <StackLayout Orientation="Horizontal" >
+                    <RadioButton  IsChecked="False" x:Name="radioCable" CheckedChanged="radioCable_CheckedChanged" ></RadioButton>
+                    <Label FontAttributes="Bold" VerticalOptions="CenterAndExpand" Text="Cable"></Label>
+                    <RadioButton IsChecked="False" x:Name="radioInternet" CheckedChanged="radioInternet_CheckedChanged" ></RadioButton>
+                    <Label FontAttributes="Bold" VerticalOptions="CenterAndExpand" Text="Internet"></Label>
+                </StackLayout>
+                </Frame>
+
+                <Entry HeightRequest="100" x:Name="txtcomentario" Placeholder="Describa el problema" ></Entry>
+                <Button BackgroundColor="#79C447" CornerRadius="5" FontAttributes="Bold" TextColor="White" FontSize="16" x:Name="BtnReportarAveria" Clicked="BtnReportarAveria_Clicked" Text="Reportar Averia"></Button>
             </StackLayout>
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+        </Frame>
+    </StackLayout>
+</Objetos:ContentPageBase>

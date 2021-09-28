@@ -4,131 +4,76 @@
              x:Class="OfiCliMovil.Pantallas.HistorialdeOrdenes"
              Title="Historial de Ordenes">
     <ContentPage.Content>
-        <StackLayout Padding="15">
 
 
+        <StackLayout Padding="10">
 
+            <ScrollView>
 
-            <StackLayout >
-
-                <Label Text="Servicio"></Label>
-
-
-                <StackLayout Orientation="Horizontal">
-
-                    <CheckBox>
-
-                    </CheckBox>
-
-                    <Picker HorizontalOptions="FillAndExpand" Title="Cable"></Picker>
-
-                </StackLayout>
-
-
-            </StackLayout>
-
-            <StackLayout>
-
-                <Label Text="Tipo de orden"></Label>
-
-
-                <StackLayout Orientation="Horizontal">
-
-                    <CheckBox>
-
-                    </CheckBox>
-
-                    <Picker HorizontalOptions="FillAndExpand" Title="Autorizar Servicio"></Picker>
-
-                </StackLayout>
-
-
-            </StackLayout>
-
-
-            <StackLayout BackgroundColor="#337AB7">
-                <StackLayout Padding="10">
-                    
-                    <Label FontAttributes="Bold" TextColor="White" Text="Estado Orden"></Label>
-
-
-                    <StackLayout Orientation="Vertical">
-
-                        <StackLayout  Orientation="Horizontal">
-
-                            <RadioButton VerticalOptions="CenterAndExpand" Text="Prueba"></RadioButton>
-                            <Label TextColor="White" VerticalOptions="CenterAndExpand" Text="Todas">
-
-                            </Label>
-                            
-                        </StackLayout>
-
-
-                        <StackLayout  Orientation="Horizontal">
-
-                            <RadioButton VerticalOptions="CenterAndExpand" Text="Prueba"></RadioButton>
-                            <Label TextColor="White" VerticalOptions="CenterAndExpand" Text="Completadas">
-
-                            </Label>
-
-                        </StackLayout>
-
-                        <StackLayout  Orientation="Horizontal">
-
-                            <RadioButton VerticalOptions="CenterAndExpand" Text="Prueba"></RadioButton>
-                            <Label TextColor="White" VerticalOptions="CenterAndExpand" Text="Pendientes">
-
-                            </Label>
-
-                        </StackLayout>
-
-                        <StackLayout  Orientation="Horizontal">
-
-                            <RadioButton VerticalOptions="CenterAndExpand" Text="Prueba"></RadioButton>
-                            <Label TextColor="White" VerticalOptions="CenterAndExpand" Text="Anuladas">
-
-                            </Label>
-
-                        </StackLayout>
-                        
-                        
-
-
-
-                    </StackLayout>
-
-
-
-                   
-
-                </StackLayout>
-
-            </StackLayout>
-            <StackLayout BackgroundColor="Green">
-                <ListView x:Name="listViewEjemplo1" CachingStrategy="RecycleElement" HasUnevenRows="True" >
+                <ListView  x:Name="lsv_historial_ordenes_pendientes" HasUnevenRows="True" >
                     <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell Height="40" >
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="50"/>
-                                        <ColumnDefinition Width="40"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                                    <CheckBox Grid.Column="0" IsChecked="false" />
-                                    <Image Grid.Column="1" HorizontalOptions="Start" Source="{Binding icon}" Margin="5"></Image>
-                                    <Label x:Name="idLabel" Grid.Column="2" Text="{Binding Opcion}" VerticalTextAlignment="Center" Margin="5"/>
-                                    <Image Grid.Column="2" HeightRequest="20" HorizontalOptions="EndAndExpand" Source="{Binding IconoBasura}" Margin="5"></Image>
-                                </Grid>
+
+                        <DataTemplate >
+
+                            <ViewCell>
+
+                                <Frame BackgroundColor="White" CornerRadius="15" Margin="5">
+                                    
+                                    <StackLayout >
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal" >
+                                            <Label FontAttributes="Bold" Text="Número:" ></Label>
+                                            <Label Text="{Binding numero}"/>
+                                            <Label FontAttributes="Bold" Text="Fecha:" ></Label>
+                                            <Label Text="{Binding fecha}"/>
+                                        </StackLayout>
+
+                                        <StackLayout BackgroundColor="#337AB7" HeightRequest="1">
+
+                                        </StackLayout>
+
+
+                                        <StackLayout Orientation="Horizontal" >
+                                            <Label FontAttributes="Bold" Text="Servicio:" ></Label>
+                                            <Label Text="{Binding servicio}"/>
+                                            <Label FontAttributes="Bold" Text="Tipo:" ></Label>
+                                            <Label Text="{Binding tipo}"/>
+                                        </StackLayout>
+
+
+
+                                        <StackLayout Orientation="Horizontal" >
+                                            <Label FontAttributes="Bold" Text="Estado:" ></Label>
+                                            <Label Text="{Binding estado}"/>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" >
+                                            <Label FontAttributes="Bold" Text="Fecha Completada:" ></Label>
+                                            <Label Text="{Binding fechaCompletada}"/>
+                                        </StackLayout>
+
+
+                                        <StackLayout Orientation="Horizontal" >
+                                            <Label FontAttributes="Bold" Text="Técnico:" ></Label>
+                                            <Label Text="{Binding tecnico}"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </Frame>
                             </ViewCell>
                         </DataTemplate>
+
+
                     </ListView.ItemTemplate>
                 </ListView>
-            </StackLayout>
+            </ScrollView>
+
 
         </StackLayout>
+
+
+
+
+
+
     </ContentPage.Content>
 </ContentPage>

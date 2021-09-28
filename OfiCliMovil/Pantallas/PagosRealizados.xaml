@@ -16,10 +16,10 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Label FontAttributes="Bold" TextColor="White" Text="No." Grid.Column="0"></Label>
-                <Label FontAttributes="Bold" TextColor="White" Text="Balance" Grid.Column="1"></Label>
+                <Label FontAttributes="Bold" TextColor="White" Text="Tipo" Grid.Column="0"></Label>
+                <Label FontAttributes="Bold" TextColor="White" Text="No." Grid.Column="1"></Label>
                 <Label FontAttributes="Bold" TextColor="White" Text="Fecha" Grid.Column="2"></Label>
-                <Label FontAttributes="Bold" TextColor="White" Text="Referencia" Grid.Column="3"></Label>
+                <Label FontAttributes="Bold" TextColor="White" Text="Valor" HorizontalOptions="End" Grid.Column="3"></Label>
 
             </Grid>
 
@@ -48,10 +48,12 @@
 
 
 
-                                        <Label  Grid.Column="0" HorizontalOptions="Start" Text="{Binding numero_fac}"/>
-                                        <Label FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Start" Text="{Binding balance, StringFormat='{0:N2}'}"/>
+                                        <Label  Grid.Column="0" HorizontalOptions="Start" Text="{Binding tipo}"/>
+                                        <Label  Grid.Column="1"  HorizontalOptions="Start" Text="{Binding numero_rec}"/>
                                         <Label  Grid.Column="2" HorizontalOptions="Start" Text="{Binding fecha}"/>
-                                        <Label  Grid.Column="3"  HorizontalOptions="Start" Text="{Binding referencia}"/>
+                                        <Label  Grid.Column="3"  HorizontalOptions="End" Text="{Binding valor,StringFormat='{0:n2}'}"/>
+                                        <!--<Label  Grid.Column="3"  HorizontalOptions="Start" Text="{Binding referencia}"/>
+                                        <Label  Grid.Column="3"  HorizontalOptions="Start" Text="{Binding cobrador}"/>-->
 
 
 
@@ -77,6 +79,11 @@
             <StackLayout  Orientation="Horizontal" >
                 <Label x:Name="lblBalance" FontSize="14" FontAttributes="Bold" TextColor="Black" Text="Balance:" HorizontalOptions="Start" VerticalOptions="Center" />
                 <Entry HorizontalTextAlignment="End" x:Name="txtBalance" FontSize="12" Text="2222222" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <StackLayout  Orientation="Horizontal" >
+                <Label x:Name="lblcantidad" FontSize="14" FontAttributes="Bold" TextColor="Black" Text="Balance:" HorizontalOptions="Start" VerticalOptions="Center" />
+                <Entry HorizontalTextAlignment="End" x:Name="txtcantidad" FontSize="12" Text="2222222" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
             </StackLayout>
             <!--<StackLayout Orientation="Horizontal" Padding="10,0,10,10">
                 <Label x:Name="lblBalance" FontSize="14" FontAttributes="Bold" TextColor="DarkRed" Text="Pago Mínimo:" HorizontalOptions="Start" VerticalOptions="Center" />

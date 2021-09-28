@@ -1169,25 +1169,25 @@ namespace OfiCliMovil
             return request;
         }
 
-        //    public async Task<string> EjecutarMetodoPost(string parametros, string body_data)
-        //    {
-        //        try
-        //        {
-        //            string url = Configuracion.ServerApi + parametros;
-        //            string bvody_data_formated = "\"" + body_data.Replace("\"", "\\" + "\"") + "\"";
+        public async Task<string> EjecutarMetodoPost(string parametros, string body_data)
+        {
+            try
+            {
+                string url = Configuracion.ServerApi + parametros;
+/*                string bvody_data_formated = "\"" + body_data.Replace("\"", "\\" + "\"") + "\""*/;
 
-        //            HttpClient client = new HttpClient();
-        //            var content = new StringContent(bvody_data_formated, Encoding.UTF8, "application/json");
-        //            var response = await client.PostAsync(url, content);
-        //            var jsonString = await response.Content.ReadAsStringAsync();
-        //            return jsonString.ToString();
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            UserDialogs.Instance.Toast("¡No se pudo establecer conexión con el servidor!. ");
-        //            throw ex;
-        //        }
-        //    }
+                HttpClient client = new HttpClient();
+                var content = new StringContent(body_data, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(url, content);
+                var jsonString = await response.Content.ReadAsStringAsync();
+                return jsonString.ToString();
+            }
+            catch (Exception ex)
+            {
+                UserDialogs.Instance.Toast("¡No se pudo establecer conexión con el servidor!. ");
+                throw ex;
+            }
+        }
 
         //    public async Task<string> EjecutarSentenciaEnApiParaSubirFoto(string Method)
         //    {
