@@ -27,7 +27,7 @@ namespace OfiCliMovil.Pantallas
                 base.OnAppearing();
                 this.IsBusy = false;
                 LlenarBalancePendiente();
-                lsv_balancependiente.Refreshing += Lsv_balancependiente_Refreshing;
+                //lsv_balancependiente.Refreshing += Lsv_balancependiente_Refreshing;
             }
             catch (Exception ex)
             {
@@ -36,33 +36,33 @@ namespace OfiCliMovil.Pantallas
 
         }
 
-        private void Lsv_balancependiente_Refreshing(object sender, EventArgs e)
-        {
-            try
-            {
-                LlenarBalancePendiente();
-                lsv_balancependiente.IsRefreshing = false;
-            }
-            catch (Exception ex)
-            {
+        //private void Lsv_balancependiente_Refreshing(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        LlenarBalancePendiente();
+        //        lsv_pagos_realizados.IsRefreshing = false;
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-            }
+        //    }
 
-        }
+        //}
 
 
         public async Task LlenarBalancePendiente()
         {
             try
             {
-                lsv_balancependiente.IsVisible = false;
+                lsv_pagos_realizados.IsVisible = false;
                 ApiOrdenServicio apiOrdenServicio = new OfiCliMovil.Models.ApiOrdenServicio();
-                lsv_balancependiente.ItemsSource = null;
+                lsv_pagos_realizados.ItemsSource = null;
 
                 var datos = await apiOrdenServicio.GetListadoDePagosRealizados(App.Id_Cliente);
 
-                lsv_balancependiente.ItemsSource = datos;
-                lsv_balancependiente.IsVisible = true;
+                lsv_pagos_realizados.ItemsSource = datos;
+                lsv_pagos_realizados.IsVisible = true;
 
                 txtBalance.Text = string.Format("{0:N2}", datos.Sum(n => n.valor));
                 txtcantidad.Text = datos.Count.ToString();
@@ -72,6 +72,11 @@ namespace OfiCliMovil.Pantallas
             {
 
             }
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }

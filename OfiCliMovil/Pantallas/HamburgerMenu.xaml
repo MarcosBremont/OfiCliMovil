@@ -13,7 +13,7 @@
                 <StackLayout  Orientation="Vertical" Padding="10" >
                     <Label Text="OFICLI" FontFamily="NovaFlat" Padding="15,0,15,15" TextColor="White" FontAttributes="Bold" FontSize="30"  HorizontalOptions="Center" ></Label>
                     <BoxView BackgroundColor="White" HeightRequest="1" ></BoxView>
-                    <ListView   SeparatorVisibility="None" x:Name="ListMenu" ItemSelected="ListMenu_ItemSelected" >
+                    <ListView  SeparatorVisibility="None" x:Name="ListMenu" ItemSelected="ListMenu_ItemSelected" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -29,7 +29,7 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                    <Button BackgroundColor="White" x:Name="BtnCerrarSesion" Clicked="BtnCerrarSesion_Clicked"  Text="CERRAR SESIÓN"></Button>
+                    <Button BackgroundColor="White" FontAttributes="Bold" x:Name="BtnCerrarSesion" CornerRadius="20" Clicked="BtnCerrarSesion_Clicked"  Text="CERRAR SESIÓN"></Button>
                 </StackLayout>
             </StackLayout>
         </ContentPage>

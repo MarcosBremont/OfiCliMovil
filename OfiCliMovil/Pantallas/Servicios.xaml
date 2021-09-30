@@ -5,28 +5,34 @@
              Title="Servicios">
     <ContentPage.Content>
         <StackLayout Padding="10">
-            
 
-            <ListView Margin="15" x:Name="lsv_Servicio_Cable" HasUnevenRows="True" >
+            <Frame BackgroundColor="#337AB7" Padding="4" CornerRadius="15">
+                
+                <Label Text="Cable" FontSize="20" HorizontalOptions="Center" Padding="2" TextColor="White" FontAttributes="Bold"></Label>
+
+            </Frame>
+            
+            
+            
+            <ListView Margin="15" SeparatorVisibility="None" x:Name="lsv_Servicio_Cable" HasUnevenRows="True" >
                 <ListView.ItemTemplate>
 
                     <DataTemplate >
 
                         <ViewCell>
 
-                            <Frame BackgroundColor="White" CornerRadius="15" >
+                            <Frame BackgroundColor="White" Padding="4" Margin="5" CornerRadius="15" >
 
                                 <StackLayout >
 
-                                
+
                                         <StackLayout>
-                                            <Label Text="Cable"></Label>
-                                            <Label Text="{Binding serie_caja}"></Label>
+                                        <Label FontAttributes="Bold" HorizontalOptions="Center" Text="{Binding serie_caja}"></Label>
                                         </StackLayout>
                                     
 
-                                        <StackLayout >
-                                            <Label Text="Plan"></Label>
+                                        <StackLayout Orientation="Vertical" >
+                                            <Label Text="PLAN" FontAttributes="Bold"></Label>
                                             <Label Text="{Binding paquete}"></Label>
                                         </StackLayout>
 
@@ -47,9 +53,14 @@
 
 
 
+            <Frame BackgroundColor="#74C390" Padding="4" CornerRadius="15">
+
+                <Label Text="Internet" FontSize="20" HorizontalOptions="Center" Padding="2" TextColor="White" FontAttributes="Bold"></Label>
+
+            </Frame>
 
 
-            <ListView  x:Name="lsv_Servicio_Internet" SeparatorVisibility="None" HasUnevenRows="True" >
+            <ListView Margin="15" SeparatorVisibility="None"  x:Name="lsv_Servicio_Internet"  HasUnevenRows="True" >
                 <ListView.ItemTemplate>
 
                     <DataTemplate >
@@ -62,8 +73,7 @@
 
 
                                         <StackLayout>
-                                            <Label Text="Internet"></Label>
-                                            <Label Text="{Binding serie_cablemodem}"></Label>
+                                            <Label FontAttributes="Bold" HorizontalOptions="Center" Text="{Binding serie_cablemodem}"></Label>
                                         </StackLayout>
 
                                         <StackLayout>

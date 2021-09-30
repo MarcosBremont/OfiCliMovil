@@ -48,6 +48,15 @@ namespace OfiCliMovil.Models
             return listado_de_ordenes_servicio;
         } // Fin del método ObtenerMenu
 
+        public async Task<List<ETarjetas>> GetTarjetas(int idCliente)
+        {
+
+            var result = await herramientas.EjecutarSentenciaEnApiLibre($"Cliente/ObtenerListadoTarjetas/{idCliente}");
+            var listado_de_tarjetas = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ETarjetas>>(result);
+
+            return listado_de_tarjetas;
+        } // Fin del método ObtenerMenu
+
 
         public async Task<List<ERecibo>> GetListadoDePagosRealizados(int idCliente)
         {

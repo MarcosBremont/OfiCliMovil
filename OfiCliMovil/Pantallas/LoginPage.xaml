@@ -39,7 +39,7 @@
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
-            <Label HorizontalOptions="CenterAndExpand"  Margin="0,0,0,10" Text="Created by Sistecsoft Beta v1.0.0"></Label>
+            <Label x:Name="lblVersion" HorizontalOptions="CenterAndExpand"  Margin="0,0,0,10" Text="Created by Sistecsoft v1.0.0"></Label>
         </StackLayout>
 
     </StackLayout>

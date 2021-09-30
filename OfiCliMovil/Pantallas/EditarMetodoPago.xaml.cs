@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace OfiCliMovil.Pantallas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RealizarPago : ContentPage
+    public partial class EditarMetodoPago : ContentPage
     {
-        public RealizarPago()
+        public EditarMetodoPago()
         {
             InitializeComponent();
-        }
-
-        protected override bool OnBackButtonPressed()
-        {
-            return true;
         }
     }
 }

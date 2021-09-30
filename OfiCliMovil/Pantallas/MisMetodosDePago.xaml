@@ -4,31 +4,32 @@
              x:Class="OfiCliMovil.Pantallas.MisMetodosDePago"
              Title="Mis Metodos de Pago">
     <ContentPage.Content>
-        <StackLayout Padding="15">
+        <StackLayout Padding="15,5,15,0">
 
-            <ListView x:Name="listViewEjemplo1" CachingStrategy="RecycleElement" HasUnevenRows="True" >
+            <ListView x:Name="lsv_tarjetas" HasUnevenRows="True" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell Height="40" >
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition Width="40"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
-                                <CheckBox Grid.Column="0" IsChecked="false" />
-                                <Image Grid.Column="1" HorizontalOptions="Start" Source="{Binding icon}" Margin="5"></Image>
-                                <Label x:Name="idLabel" Grid.Column="2" Text="{Binding Opcion}" VerticalTextAlignment="Center" Margin="5"/>
-                                <Image Grid.Column="2" HeightRequest="20" HorizontalOptions="EndAndExpand" Source="{Binding IconoBasura}" Margin="5"></Image>
-                            </Grid>
+                        <ViewCell >
+                            <Frame Padding="10" BackgroundColor="LightGray" CornerRadius="5" Margin="5">
+                                
+                                    <StackLayout>
+                                        
+                                        <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+                                            <Label  FontSize="18" HorizontalOptions="Center" Text="**** **** **** " Margin="5"/>
+                                            <Label FontSize="18" Text="{Binding terminal}" VerticalTextAlignment="Center" Margin="5"/>
+                                        </StackLayout>
+                                    <StackLayout  Orientation="Horizontal">
+                                        <Label FontSize="16" HorizontalOptions="Center" Text="{Binding cliente}" Margin="5"/>
+                                        <Image  HeightRequest="50" HorizontalOptions="End" Source="{Binding Image}" Margin="5"></Image>
+                                    </StackLayout>
+
+                                    </StackLayout>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Label x:Name="idLabel" HorizontalOptions="CenterAndExpand" Text="Añadir Método de Pago" Margin="5"/>
+            <Button Text="Añadir Método de Pago" BackgroundColor="#2196F3" TextColor="White" FontAttributes="Bold" CornerRadius="20" Margin="15,5,15,15"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

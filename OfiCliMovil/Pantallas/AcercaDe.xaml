@@ -70,7 +70,7 @@
                                     <Label >
                                         <Label.FormattedText>
                                             <FormattedString>
-                                                <Span Text="{Binding version_ofitec}" x:Name="lblVersion" TextColor="#333" FontSize="15" ></Span>
+                                                <Span Text="1.0" x:Name="lblVersion" TextColor="#333" FontSize="15" ></Span>
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>

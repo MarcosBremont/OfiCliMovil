@@ -18,7 +18,6 @@
                     <Label FontSize="16" FontAttributes="Bold" Text="Télefono"/>
                     <StackLayout Orientation="Horizontal">
                         <Entry FontAttributes="Bold" x:Name="txttelefono" IsEnabled="False" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></Entry>
-                        <ImageButton WidthRequest="40" BackgroundColor="Transparent" Source="plus3.png"></ImageButton>
                     </StackLayout>
                 </StackLayout>
                 <Label FontSize="16" FontAttributes="Bold" Text="Estado"/>

@@ -24,12 +24,12 @@ namespace OfiCliMovil.Pantallas
 
         private async void btnPendiente_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new BalancePendiente());
+            App.HamburgerMenu.Detail = new NavigationPage(new BalancePendiente());
         }
 
         private async void btnUltimoPago_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new BalancePendiente());
+            App.HamburgerMenu.Detail = new NavigationPage(new BalancePendiente());
 
         }
 
@@ -59,6 +59,11 @@ namespace OfiCliMovil.Pantallas
                 await DisplayAlert("No se pudo establecer la conexión", "por favor verifique su conexion a internet", "OK");
             }
 
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }

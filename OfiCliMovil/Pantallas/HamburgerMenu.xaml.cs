@@ -17,7 +17,6 @@ namespace OfiCliMovil.Pantallas
         {
             InitializeComponent();
             MyMenu();
-
         }
         public void MyMenu()
         {

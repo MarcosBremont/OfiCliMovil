@@ -4,12 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using Rg.Plugins.Popup.Services;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using OfiCliMovil.Objetos;
 using Xamarin.Forms.Xaml;
 using Objetos;
+using Rg.Plugins.Popup.Services;
 
 namespace OfiCliMovil.Pantallas
 {
@@ -19,6 +21,9 @@ namespace OfiCliMovil.Pantallas
         Herramientas herramientas = new Herramientas();
         ApiOrdenServicio apiOrdenServicio = new ApiOrdenServicio();
         ToastConfigClass toastConfig = new ToastConfigClass();
+
+        ModalVersiones modalversion = new ModalVersiones();
+        private bool _userTapped;
 
         public LoginPage()
         {
@@ -38,6 +43,44 @@ namespace OfiCliMovil.Pantallas
                 }
               );
 
+
+            lblVersion.GestureRecognizers.Add(
+              new TapGestureRecognizer()
+              {
+                  Command = new Command(async () =>
+                  {
+                      if (_userTapped)
+                          return;
+
+                      _userTapped = true;
+                      modalversion = new ModalVersiones();
+                      modalversion.OnLLamarOtraPantalla += Modalversion_OnLLamarOtraPantalla;
+
+                      await PopupNavigation.PushAsync(modalversion);
+                      await Task.Delay(1000);
+                      _userTapped = false;
+                      Opacity = 1;
+                  }),
+                  NumberOfTapsRequired = 1
+
+              }
+            );
+
+        }
+
+        private void Modalversion_OnLLamarOtraPantalla(object sender, EventArgs e)
+        {
+            try
+            {
+                Acr.UserDialogs.UserDialogs.Instance.ShowLoading("Cargando...");
+                //await LlenarListado();
+                Acr.UserDialogs.UserDialogs.Instance.HideLoading();
+            }
+
+            catch (Exception ex)
+            {
+                MostrarNotificacion("Error, no se puedne consultar las versiones" + ex);
+            }
         }
 
         private async void BtnIniciarSesion_Clicked(object sender, EventArgs e)
@@ -61,11 +104,13 @@ namespace OfiCliMovil.Pantallas
 
                     if (apiResult.encontrado == true)
                     {
+                        App.Cliente = apiResult.nombre_cli;
                         App.Cedula = TxtUsuario.Text;
                         App.Clave = ClaveEnMayuscula;
                         App.Id_Cliente = apiResult.codigo_cli;
                         toastConfig.MostrarNotificacion($"Bienvenido {apiResult.nombre_cli}", ToastPosition.Top, 3, "#51C560");
-                        await Navigation.PushModalAsync(new HamburgerMenu());
+                        App.HamburgerMenu = new HamburgerMenu();
+                        await Navigation.PushModalAsync(App.HamburgerMenu);
                         int codigocli = apiResult.codigo_cli;
                     }
                     else

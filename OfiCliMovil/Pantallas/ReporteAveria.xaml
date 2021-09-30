@@ -19,7 +19,7 @@
                 </Frame>
 
                 <Entry HeightRequest="100" x:Name="txtcomentario" Placeholder="Describa el problema" ></Entry>
-                <Button BackgroundColor="#79C447" CornerRadius="5" FontAttributes="Bold" TextColor="White" FontSize="16" x:Name="BtnReportarAveria" Clicked="BtnReportarAveria_Clicked" Text="Reportar Averia"></Button>
+                <Button BackgroundColor="#79C447" CornerRadius="20" FontAttributes="Bold" TextColor="White" FontSize="16" x:Name="BtnReportarAveria" Clicked="BtnReportarAveria_Clicked" Text="Reportar Averia"></Button>
             </StackLayout>
         </Frame>
     </StackLayout>

@@ -168,19 +168,19 @@ namespace OfiCliMovil
         //        return null;
         //    }
 
-        //    internal string FromURLTOBase64(string fileName)
-        //    {
-        //        try
-        //        {
-        //            System.Net.WebClient wc = new System.Net.WebClient();
-        //            byte[] response = wc.DownloadData(fileName);
-        //            return ByteArrayToBase64(response);
-        //        }
-        //        catch (Exception)
-        //        {
-        //            return "Error";
-        //        }
-        //    }
+        internal string FromURLTOBase64(string fileName)
+        {
+            try
+            {
+                System.Net.WebClient wc = new System.Net.WebClient();
+                byte[] response = wc.DownloadData(fileName);
+                return ByteArrayToBase64(response);
+            }
+            catch (Exception)
+            {
+                return "Error";
+            }
+        }
 
         //    internal object GetColorPorId(string idColor)
         //    {
@@ -942,23 +942,23 @@ namespace OfiCliMovil
 
         //    }
 
-        //    public byte[] ImageToByteArray(string imgSourcePath)
-        //    {
-        //        //file to base64 string
-        //        return System.IO.File.ReadAllBytes(imgSourcePath);
-        //    }
+        public byte[] ImageToByteArray(string imgSourcePath)
+        {
+            //file to base64 string
+            return System.IO.File.ReadAllBytes(imgSourcePath);
+        }
 
-        //    public string ByteArrayToBase64(byte[] ByteArray)
-        //    {
-        //        return Convert.ToBase64String(ByteArray);
-        //    }
+        public string ByteArrayToBase64(byte[] ByteArray)
+        {
+            return Convert.ToBase64String(ByteArray);
+        }
 
-        //    public string PathToBase64(string PathFileFrom)
-        //    {
-        //        if (PathFileFrom is null)
-        //            return "Image not found...";
-        //        return ByteArrayToBase64(ImageToByteArray(PathFileFrom));
-        //    }
+        public string PathToBase64(string PathFileFrom)
+        {
+            if (PathFileFrom is null)
+                return "Image not found...";
+            return ByteArrayToBase64(ImageToByteArray(PathFileFrom));
+        }
 
         //    #region Mensajes y Alertas
 
